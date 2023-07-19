@@ -7,7 +7,7 @@ import {
 import "./App.css";
 import { io } from "socket.io-client";
 
-const socket = io("/");
+const socket = io("/socket.io");
 
 function App() {
     interface Message {
