@@ -4,6 +4,7 @@ import express from "express";
 import morgan from "morgan";
 import http from "http";
 import { Server as SocketServer } from "socket.io";
+import cors from "cors";
 
 const app = express();
 const server = http.createServer(app);
@@ -23,7 +24,7 @@ io.on("connection", (socket) => {
 
 app.use(express.json());
 app.use(morgan("dev"));
-
+app.use(cors());
 const PORT = process.env.PORT;
 
 server.listen(PORT, () => {
