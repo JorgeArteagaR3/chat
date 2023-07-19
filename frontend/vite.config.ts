@@ -10,6 +10,8 @@ export default defineConfig({
             "/socket.io": {
                 target: "https://chat-2km2.onrender.com",
                 ws: true,
+                secure: false,
+                changeOrigin: true,
             },
         },
     },
