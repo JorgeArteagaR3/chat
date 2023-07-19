@@ -7,6 +7,11 @@ import { Server as SocketServer } from "socket.io";
 import cors from "cors";
 
 const app = express();
+
+app.use(express.json());
+app.use(morgan("dev"));
+app.use(cors({ origin: process.env.FRONTEND }));
+
 const server = http.createServer(app);
 const io = new SocketServer(server);
 
@@ -22,10 +27,7 @@ io.on("connection", (socket) => {
     });
 });
 
-app.use(express.json());
-app.use(morgan("dev"));
-app.use(cors());
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000;
 
 server.listen(PORT, () => {
     console.log("SERVER RUNNING ON PORT:", PORT);

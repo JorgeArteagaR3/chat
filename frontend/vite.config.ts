@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import https from "https";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,10 +7,8 @@ export default defineConfig({
     server: {
         proxy: {
             "/socket.io": {
-                target: "https://chat-2km2.onrender.com",
+                target: "http://localhost:4000",
                 ws: true,
-                secure: false,
-                changeOrigin: true,
             },
         },
     },
