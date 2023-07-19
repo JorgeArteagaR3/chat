@@ -7,7 +7,7 @@ export default defineConfig({
     server: {
         proxy: {
             "/socket.io": {
-                target: "https://chat-2km2.onrender.com/",
+                target: "https://chat-2km2.onrender.com",
                 ws: true,
             },
         },
