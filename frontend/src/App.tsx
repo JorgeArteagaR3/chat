@@ -7,7 +7,7 @@ import {
 import "./App.css";
 import { io } from "socket.io-client";
 
-const socket = io("https://chat-2km2.onrender.com");
+const socket = io(import.meta.env.BACKEND_URL);
 
 function App() {
     interface Message {
