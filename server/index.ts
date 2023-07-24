@@ -10,10 +10,14 @@ const app = express();
 
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(cors({ origin: process.env.FRONTEND }));
+app.use(cors());
 
 const server = http.createServer(app);
-const io = new SocketServer(server);
+const io = new SocketServer(server, {
+    cors: {
+        origin: process.env.FRONTEND_URL,
+    },
+});
 
 io.on("connection", (socket) => {
     console.log("client connected", socket.id);
