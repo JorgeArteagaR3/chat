@@ -55,7 +55,7 @@ function App() {
                 />
                 <button>Send</button>
             </form>
-            <ul className="list-none shadow-2xl min-h-[300px] p-4 bg-[#242424]">
+            <ul className="list-none shadow-2xl min-h-[300px] p-4 bg-[#242424] overflow-y-auto">
                 {messages.map((message, i) => (
                     <li
                         key={i}
