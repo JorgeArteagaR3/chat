@@ -15,7 +15,7 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new SocketServer(server, {
     cors: {
-        origin: "https://chat-xat.vercel.app/",
+        origin: "https://chat-xat.vercel.app",
     },
 });
 
