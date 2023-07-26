@@ -32,6 +32,7 @@ function App() {
         e.preventDefault();
         socket.emit("message", { ...message, from: socket.id });
         saveMessage(message);
+        setMessage((prev) => ({ ...prev, body: "" }));
     };
 
     useEffect(() => {
@@ -44,7 +45,7 @@ function App() {
 
     return (
         <div>
-            <h1 className="mb-6 text-yellow-200">Xat</h1>
+            <h1 className="mb-6 text-yellow-200 text-center">Xat</h1>
             <form action="" onSubmit={handleSubmit} className="flex gap-2 mb-2">
                 <input
                     type="text"
